@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Card from './Card';
 
 const cards = [
   { question: "What is the capital of France?", answer: "Paris" },
@@ -30,11 +31,14 @@ const cards = [
 ];
 
 const App = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
     <div>
       <h1>Capital Cities Showdown!</h1>
       <p>Think you’re a geography whiz? Prove it by matching all 25 global capitals to their countries!</p>
       <p>Total cards: {cards.length}</p>
+      <Card content={cards[currentIndex].question} />
     </div>
   );
 };

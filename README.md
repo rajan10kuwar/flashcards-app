@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Web Development Project 2 - *Name of App Here*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Submitted by: **Your Name Here**
 
-## Available Scripts
+This web app: **insert description**
 
-In the project directory, you can run:
+Time spent: **X** hours spent in total
 
-### `npm start`
+## Required Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The following **required** functionality is completed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+- [ ] **The app displays the title of the card set, a short description, and the total number of cards**
+  - [ ] Title of card set is displayed 
+  - [ ] A short description of the card set is displayed 
+  - [ ] A list of card pairs is created
+  - [ ] The total number of cards in the set is displayed 
+  - [ ] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
+- [ ] **A single card at a time is displayed**
+  - [ ] Only one half of the information pair is displayed at a time
+- [ ] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
+  - [ ] Clicking on a card flips it over, showing the back with corresponding information 
+  - [ ] Clicking on a flipped card again flips it back, showing the front
+- [ ] **Clicking on the next button displays a random new card**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The following **optional** features are implemented:
 
-### `npm run build`
+- [ ] Cards contain images in addition to or in place of text
+  - [ ] Some or all cards have images in place of or in addition to text
+- [ ] Cards have different visual styles such as color based on their category
+  - Example categories you can use:
+    - Difficulty: Easy/medium/hard
+    - Subject: Biology/Chemistry/Physics/Earth science
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following **additional** features are implemented:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [ ] List anything else that you added to improve the site's functionality!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Video Walkthrough
 
-### `npm run eject`
+Here's a walkthrough of implemented required features:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with ...  
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Notes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Describe any challenges encountered while building the app.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Copyright [yyyy] [name of copyright owner]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-### Code Splitting
+        http://www.apache.org/licenses/LICENSE-2.0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

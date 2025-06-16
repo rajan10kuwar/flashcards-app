@@ -32,13 +32,25 @@ const cards = [
 
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setFlipped(!flipped);
+  };
 
   return (
     <div>
       <h1>Capital Cities Showdown!</h1>
       <p>Think you’re a geography whiz? Prove it by matching all 25 global capitals to their countries!</p>
       <p>Total cards: {cards.length}</p>
-      <Card content={cards[currentIndex].question} />
+      <div className="card-container">
+        <Card
+          front={cards[currentIndex].question}
+          back={cards[currentIndex].answer}
+          flipped={flipped}
+          onClick={handleFlip}
+        />
+      </div>
     </div>
   );
 };

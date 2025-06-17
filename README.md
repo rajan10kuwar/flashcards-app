@@ -1,34 +1,34 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - *Capital Cities Showdown!*
 
-Submitted by: **Your Name Here**
+Submitted by: **Rajan Kuwar**
 
-This web app: **insert description**
+This web app: **A React-based flashcard application that helps users test their geography knowledge by matching global capitals to their countries. Users can flip cards to see answers, view a random new card with the "Next" button, and enjoy visual enhancements like images and continent-based color styling.**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 
-- [ ] **The app displays the title of the card set, a short description, and the total number of cards**
-  - [ ] Title of card set is displayed 
-  - [ ] A short description of the card set is displayed 
-  - [ ] A list of card pairs is created
-  - [ ] The total number of cards in the set is displayed 
-  - [ ] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
-- [ ] **A single card at a time is displayed**
-  - [ ] Only one half of the information pair is displayed at a time
-- [ ] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
-  - [ ] Clicking on a card flips it over, showing the back with corresponding information 
-  - [ ] Clicking on a flipped card again flips it back, showing the front
-- [ ] **Clicking on the next button displays a random new card**
+- [X] **The app displays the title of the card set, a short description, and the total number of cards**
+  - [X] Title of card set is displayed 
+  - [X] A short description of the card set is displayed 
+  - [X] A list of card pairs is created
+  - [X] The total number of cards in the set is displayed 
+  - [X] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
+- [X] **A single card at a time is displayed**
+  - [X] Only one half of the information pair is displayed at a time
+- [X] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
+  - [X] Clicking on a card flips it over, showing the back with corresponding information 
+  - [X] Clicking on a flipped card again flips it back, showing the front
+- [X] **Clicking on the next button displays a random new card**
 
 The following **optional** features are implemented:
 
-- [ ] Cards contain images in addition to or in place of text
-  - [ ] Some or all cards have images in place of or in addition to text
-- [ ] Cards have different visual styles such as color based on their category
+- [X] Cards contain images in addition to or in place of text
+  - [X] Some or all cards have images in place of or in addition to text
+- [X] Cards have different visual styles such as color based on their category
   - Example categories you can use:
     - Difficulty: Easy/medium/hard
     - Subject: Biology/Chemistry/Physics/Earth science
@@ -53,10 +53,13 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Sourcing and integrating images for the cards was time-consuming, as I needed to ensure they were appropriately sized and placed in the public folder.
+
+- Assigning continent categories and corresponding colors required balancing visual appeal with accessibility to ensure text remained readable.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Rajan Kuwar]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

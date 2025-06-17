@@ -161,7 +161,7 @@ const cards = [
 ];
 
 const App = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Start with index 0 (START card)
   const [flipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -171,10 +171,8 @@ const App = () => {
 
   const handleNext = () => {
     if (cards.length > 1) {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * cards.length);
-      } while (newIndex === currentIndex);
+      // Select a random index from 1 to cards.length - 1 (exclude START card)
+      const newIndex = Math.floor(Math.random() * (cards.length - 1)) + 1;
       console.log(`Next card index: ${newIndex}`);
       setCurrentIndex(newIndex);
       setFlipped(false);

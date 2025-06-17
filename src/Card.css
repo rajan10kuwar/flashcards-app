@@ -1,7 +1,7 @@
 /* src/Card.css */
 .card {
   position: relative;
-  width: 350px; 
+  width: 350px;
   height: 250px;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
@@ -28,7 +28,6 @@
 }
 
 .front {
-  background-color: #3498db;
   color: white;
 }
 
@@ -49,4 +48,38 @@
 .front p,
 .back p {
   margin: 0;
+}
+
+/* Continent-specific styles */
+.front.default {
+  background-color: #3498db; /* Default blue if no continent */
+}
+
+.front.intro {
+  background-color: #95a5a6; /* Gray for intro */
+}
+
+.front.europe {
+  background-color: #3498db; /* Blue for Europe */
+}
+
+.front.asia {
+  background-color: #2ecc71; /* Green for Asia */
+}
+
+.front.north-america {
+  background-color: #e74c3c; /* Red for North America */
+}
+
+.front.south-america {
+  background-color: #f1c40f; /* Yellow for South America */
+  color: #2c3e50; /* Dark text for better contrast */
+}
+
+.front.africa {
+  background-color: #9b59b6; /* Purple for Africa */
+}
+
+.front.oceania {
+  background-color: #1abc9c; /* Teal for Oceania */
 }

@@ -5,7 +5,7 @@ const Card = ({ card, flipped, onClick }) => {
   console.log(`Card rendered, flipped: ${flipped}`);
   return (
     <div className={`card ${flipped ? 'flipped' : ''}`} onClick={onClick}>
-      <div className="front">
+      <div className={`front ${card.continent || 'default'}`}>
         {card.questionImage && <img src={card.questionImage} alt="Question" />}
         {card.questionText && <p>{card.questionText}</p>}
       </div>

@@ -3,31 +3,113 @@ import './App.css';
 import Card from './Card';
 
 const cards = [
-  { question: "What is the capital of France?", answer: "Paris" },
-  { question: "What is the capital of Germany?", answer: "Berlin" },
-  { question: "What is the capital of Japan?", answer: "Tokyo" },
-  { question: "What is the capital of Canada?", answer: "Ottawa" },
-  { question: "What is the capital of Brazil?", answer: "Brasília" },
-  { question: "What is the capital of Australia?", answer: "Canberra" },
-  { question: "What is the capital of India?", answer: "New Delhi" },
-  { question: "What is the capital of Russia?", answer: "Moscow" },
-  { question: "What is the capital of China?", answer: "Beijing" },
-  { question: "What is the capital of South Africa?", answer: "Pretoria" },
-  { question: "What is the capital of Mexico?", answer: "Mexico City" },
-  { question: "What is the capital of Italy?", answer: "Rome" },
-  { question: "What is the capital of Spain?", answer: "Madrid" },
-  { question: "What is the capital of South Korea?", answer: "Seoul" },
-  { question: "What is the capital of Argentina?", answer: "Buenos Aires" },
-  { question: "What is the capital of Egypt?", answer: "Cairo" },
-  { question: "What is the capital of Thailand?", answer: "Bangkok" },
-  { question: "What is the capital of Nigeria?", answer: "Abuja" },
-  { question: "What is the capital of Turkey?", answer: "Ankara" },
-  { question: "What is the capital of Sweden?", answer: "Stockholm" },
-  { question: "What is the capital of Norway?", answer: "Oslo" },
-  { question: "What is the capital of Chile?", answer: "Santiago" },
-  { question: "What is the capital of Vietnam?", answer: "Hanoi" },
-  { question: "What is the capital of Indonesia?", answer: "Jakarta" },
-  { question: "What is the capital of Poland?", answer: "Warsaw" },
+    {
+    questionText: "START",
+    answerText: "Click Next to Start!",
+  },
+  {
+    questionText: "What is the capital of France?",
+    answerText: "Paris",
+    answerImage: "/images/france.jpg"
+  },
+  {
+    questionText: "What is the capital of Germany?",
+    answerText: "Berlin",
+    answerImage: "/images/germany.jpg"
+  },
+  {
+    questionText: "What is the capital of Japan",
+    answerText: "Tokyo",
+    answerImage: "/images/japan.jpg"
+  },
+  { questionText: "What is the capital of Canada?", 
+    answerText: "Ottawa",
+    answerImage: "/images/canada.jpg"
+ },
+  { questionText: "What is the capital of Brazil?", 
+    answerText: "Brasília",
+    answerImage: "/images/brazil.jpg"
+},
+  { questionText: "What is the capital of Australia?", 
+    answerText: "Canberra",
+    answerImage: "/images/australia.jpg"
+},
+  { questionText: "What is the capital of India?", 
+    answerText: "New Delhi",
+    answerImage: "/images/india.jpg"
+},
+  { questionText: "What is the capital of Russia?", 
+    answerText: "Moscow",
+    answerImage: "/images/russia.jpg"
+},
+  { questionText: "What is the capital of China?", 
+    answerText: "Beijing",
+    answerImage: "/images/china.jpg"
+},
+  { questionText: "What is the capital of South Africa?", 
+    answerText: "Pretoria",
+    answerImage: "/images/southafrica.jpg"
+},
+  { questionText: "What is the capital of Mexico?", 
+    answerText: "Mexico City",
+    answerImage: "/images/mexico.jpg"
+},
+  { questionText: "What is the capital of Italy?", 
+    answerText: "Rome",
+    answerImage: "/images/italy.webp"
+},
+  { questionText: "What is the capital of Spain?", 
+    answerText: "Madrid",
+    answerImage: "/images/spain.jpg"
+},
+  { questionText: "What is the capital of South Korea?", 
+    answerText: "Seoul",
+    answerImage: "/images/southkorea.jpg"
+},
+  { questionText: "What is the capital of Argentina?", 
+    answerText: "Buenos Aires",
+    answerImage: "/images/argentina.jpg"
+},
+  { questionText: "What is the capital of Egypt?", 
+    answerText: "Cairo",
+    answerImage: "/images/egypt.webp"
+},
+  { questionText: "What is the capital of Thailand?", 
+    answerText: "Bangkok",
+    answerImage: "/images/thailand.jpg"
+ },
+  { questionText: "What is the capital of Nigeria?", 
+    answerText: "Abuja",
+    answerImage: "/images/nigeria.webp"
+},
+  { questionText: "What is the capital of Turkey?",
+     answerText: "Ankara",
+     answerImage: "/images/turkey.jpg"
+},
+  { questionText: "What is the capital of Sweden?", 
+    answerText: "Stockholm",
+    answerImage: "/images/sweden.webp"
+ },
+  { questionText: "What is the capital of Norway?", 
+    answerText: "Oslo",
+    answerImage: "/images/norway.jpg"
+ },
+  { questionText: "What is the capital of Chile?", 
+    answerText: "Santiago",
+    answerImage: "/images/chile.jpg"
+},
+  { questionText: "What is the capital of Vietnam?", 
+    answerText: "Hanoi",
+    answerImage: "/images/vietnam.jpg"
+},
+  { questionText: "What is the capital of Indonesia?", 
+    answerText: "Jakarta",
+    answerImage: "/images/indonesia.jpg"
+},
+  { questionText: "What is the capital of Poland?", 
+    answerText: "Warsaw",
+    answerImage: "/images/poland.jpg"
+ },
 ];
 
 const App = () => {
@@ -59,8 +141,7 @@ const App = () => {
       <div className="card-container">
         <Card
           key={currentIndex}
-          front={cards[currentIndex].question}
-          back={cards[currentIndex].answer}
+          card={cards[currentIndex]}
           flipped={flipped}
           onClick={handleFlip}
         />

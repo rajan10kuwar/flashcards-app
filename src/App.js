@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
 import Card from './Card';
+import { useState } from 'react';
 
 const cards = [
   {
@@ -161,7 +161,8 @@ const cards = [
 ];
 
 const App = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Start with index 0 (START card)
+  const [displayCards, setDisplayCards] = useState(cards);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [guess, setGuess] = useState('');
   const [guessStatus, setGuessStatus] = useState(null);
@@ -172,7 +173,7 @@ const App = () => {
   };
 
   const handleNext = () => {
-    if (currentIndex < cards.length - 1) {
+    if (currentIndex < displayCards.length - 1) {
       setCurrentIndex(currentIndex + 1);
       setFlipped(false);
       setGuess('');
@@ -189,13 +190,31 @@ const App = () => {
     }
   };
 
+  const shuffleFromIndex = (array, startIndex) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > startIndex; i--) {
+      const j = Math.floor(Math.random() * (i - startIndex + 1)) + startIndex;
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  const handleShuffle = () => {
+    const shuffledCards = shuffleFromIndex(displayCards, 1);
+    setDisplayCards(shuffledCards);
+    setCurrentIndex(1); // Start from the first flashcard after "START"
+    setFlipped(false);
+    setGuess('');
+    setGuessStatus(null);
+  };
+
   const handleGuessChange = (e) => {
     setGuess(e.target.value);
-    setGuessStatus(null); // Clear feedback when user starts typing a new guess
+    setGuessStatus(null);
   };
 
   const handleSubmit = () => {
-    const correctAnswer = cards[currentIndex].answerText.toLowerCase();
+    const correctAnswer = displayCards[currentIndex].answerText.toLowerCase();
     const userGuess = guess.toLowerCase().trim();
     setGuessStatus(userGuess === correctAnswer ? 'correct' : 'incorrect');
   };
@@ -204,11 +223,11 @@ const App = () => {
     <div className="app">
       <h1>Capital Cities Showdown!</h1>
       <p>Think you’re a geography whiz? Prove it by matching all 25 global capitals to their countries!</p>
-      <p>Total cards: {cards.length - 1}</p>
+      <p>Total cards: {displayCards.length - 1}</p>
       <div className="card-container">
         <Card
           key={currentIndex}
-          card={cards[currentIndex]}
+          card={displayCards[currentIndex]}
           flipped={flipped}
           onClick={handleFlip}
         />
@@ -233,16 +252,19 @@ const App = () => {
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
-          className={currentIndex === 0 ? 'disabled' : ''}
+          className={`navigation-button ${currentIndex === 0 ? 'disabled' : ''}`}
         >
           Previous
         </button>
         <button
           onClick={handleNext}
-          disabled={currentIndex === cards.length - 1}
-          className={currentIndex === cards.length - 1 ? 'disabled' : ''}
+          disabled={currentIndex === displayCards.length - 1}
+          className={`navigation-button ${currentIndex === displayCards.length - 1 ? 'disabled' : ''}`}
         >
           Next
+        </button>
+        <button onClick={handleShuffle} className="navigation-button">
+          Shuffle
         </button>
       </div>
     </div>

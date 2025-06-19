@@ -163,6 +163,8 @@ const cards = [
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Start with index 0 (START card)
   const [flipped, setFlipped] = useState(false);
+  const [guess, setGuess] = useState('');
+  const [guessStatus, setGuessStatus] = useState(null);
 
   const handleFlip = () => {
     console.log(`Card clicked, flipping to: ${!flipped}`);
@@ -176,7 +178,20 @@ const App = () => {
       console.log(`Next card index: ${newIndex}`);
       setCurrentIndex(newIndex);
       setFlipped(false);
+      setGuess('');
+      setGuessStatus(null);
     }
+  };
+
+  const handleGuessChange = (e) => {
+    setGuess(e.target.value);
+    setGuessStatus(null); // Clear feedback when user starts typing a new guess
+  };
+
+  const handleSubmit = () => {
+    const correctAnswer = cards[currentIndex].answerText.toLowerCase();
+    const userGuess = guess.toLowerCase().trim();
+    setGuessStatus(userGuess === correctAnswer ? 'correct' : 'incorrect');
   };
 
   return (
@@ -192,6 +207,22 @@ const App = () => {
           onClick={handleFlip}
         />
       </div>
+      {currentIndex > 0 && !flipped && (
+        <div className="guess-section">
+          <input
+            type="text"
+            value={guess}
+            onChange={handleGuessChange}
+            placeholder="Enter your guess"
+          />
+          <button onClick={handleSubmit}>Submit</button>
+          {guessStatus && (
+            <p className={guessStatus}>
+              {guessStatus === 'correct' ? 'Correct!' : 'Incorrect!'}
+            </p>
+          )}
+        </div>
+      )}
       <button onClick={handleNext}>Next</button>
     </div>
   );

@@ -162,6 +162,7 @@ const cards = [
 
 const App = () => {
   const [displayCards, setDisplayCards] = useState(cards);
+  const [masteredCards, setMasteredCards] = useState([]); // New state for mastered cards
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [guess, setGuess] = useState('');
@@ -219,6 +220,21 @@ const App = () => {
     setGuessStatus(userGuess === correctAnswer ? 'correct' : 'incorrect');
   };
 
+  const handleMaster = () => {
+    if (currentIndex > 0) { // Only master cards after "START"
+      const masteredCard = displayCards[currentIndex];
+      const newDisplayCards = displayCards.filter((_, index) => index !== currentIndex);
+      setDisplayCards(newDisplayCards);
+      setMasteredCards([...masteredCards, masteredCard]);
+      if (currentIndex >= newDisplayCards.length) {
+        setCurrentIndex(newDisplayCards.length - 1);
+      }
+      setFlipped(false);
+      setGuess('');
+      setGuessStatus(null);
+    }
+  };
+
   return (
     <div className="app">
       <h1>Capital Cities Showdown!</h1>
@@ -232,6 +248,9 @@ const App = () => {
           onClick={handleFlip}
         />
       </div>
+      {flipped && currentIndex > 0 && (
+        <button onClick={handleMaster} className="master-button">Mark as Mastered</button>
+      )}
       {currentIndex > 0 && !flipped && (
         <div className="guess-section">
           <input
@@ -266,6 +285,14 @@ const App = () => {
         <button onClick={handleShuffle} className="navigation-button">
           Shuffle
         </button>
+      </div>
+      <div className="mastered-cards">
+        <h2>Mastered Cards</h2>
+        <ul>
+          {masteredCards.map((card, index) => (
+            <li key={index}>{card.questionText}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

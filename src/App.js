@@ -172,11 +172,17 @@ const App = () => {
   };
 
   const handleNext = () => {
-    if (cards.length > 1) {
-      // Select a random index from 1 to cards.length - 1 (exclude START card)
-      const newIndex = Math.floor(Math.random() * (cards.length - 1)) + 1;
-      console.log(`Next card index: ${newIndex}`);
-      setCurrentIndex(newIndex);
+    if (currentIndex < cards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setFlipped(false);
+      setGuess('');
+      setGuessStatus(null);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
       setFlipped(false);
       setGuess('');
       setGuessStatus(null);
@@ -223,7 +229,22 @@ const App = () => {
           )}
         </div>
       )}
-      <button onClick={handleNext}>Next</button>
+      <div className="navigation-buttons">
+        <button
+          onClick={handlePrevious}
+          disabled={currentIndex === 0}
+          className={currentIndex === 0 ? 'disabled' : ''}
+        >
+          Previous
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === cards.length - 1}
+          className={currentIndex === cards.length - 1 ? 'disabled' : ''}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

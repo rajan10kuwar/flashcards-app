@@ -89,3 +89,21 @@ button:active {
   font-weight: bold;
   margin: 10px 0 0 0;
 }
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button.disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.disabled:hover {
+  background-color: #bdc3c7;
+  transform: none;
+}
